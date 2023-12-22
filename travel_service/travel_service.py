@@ -281,7 +281,7 @@ def ticket_purchase():
         mysql_conn.commit()
         # result = cursor.fetchone()
         # print(result)
-    return "200"
+    return jsonify({"message": "Travel plan received successfully"})
 
 # 酒店预定
 @app.route('/hotel_preserve', methods = ['POST', 'GET'])
@@ -290,6 +290,8 @@ def hotel_preserve():
     # print(datajson)
     input = json.loads(datajson)
     
+    print(input)
+
     user_id = input["user_id"]
     hotel_id = input["hotel_id"]
     room_id = input["room_id"]
@@ -304,7 +306,7 @@ def hotel_preserve():
         mysql_conn.commit()
         # result = cursor.fetchone()
         # print(result)
-    return "200"
+    return jsonify({"message": "Travel plan received successfully"})
 
 
 # 车子预定
@@ -313,7 +315,7 @@ def car_preserve():
     datajson = request.get_data()
     # print(datajson)
     input = json.loads(datajson)
-    
+    print(input)
     user_id = input["user_id"]
     carrental_id = input["carrental_id"]
 
@@ -327,7 +329,7 @@ def car_preserve():
         mysql_conn.commit()
         # result = cursor.fetchone()
         # print(result)
-    return "200"
+    return jsonify({"message": "Travel plan received successfully"})
 
 
 # 景点预定
@@ -350,7 +352,7 @@ def attraction_preserve():
         mysql_conn.commit()
         # result = cursor.fetchone()
         # print(result)
-    return "200"
+    return jsonify({"message": "Travel plan received successfully"})
 
 # 导游预定
 @app.route('/guide_preserve', methods = ['POST', 'GET'])
@@ -372,7 +374,7 @@ def guide_preserve():
         mysql_conn.commit()
         # result = cursor.fetchone()
         # print(result)
-    return "200"
+    return jsonify({"message": "Travel plan received successfully"})
 
 @app.route('/bank_query', methods = ['POST', 'GET'])
 def bank_query():
